@@ -6,6 +6,7 @@ import * as THREE from "three";
 import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
+import { useFrame } from "@react-three/fiber";
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -58,9 +59,19 @@ export function WizardModel(props: JSX.IntrinsicElements["group"]) {
   const { nodes, materials } = useGLTF(
     "/models/wizard-transformed.glb"
   ) as GLTFResult;
+
+  const modelRef = useRef<THREE.Group>(null);
+  useFrame((state, delta, xrFrame) => {
+    if (modelRef.current) {
+      // restrict model's movement along y-axis between 0 & 1 using Math.sin.
+      modelRef.current.position.y =
+        -1.5 + Math.sin(state.clock.elapsedTime) * 0.15;
+    }
+  });
   return (
     <group
       {...props}
+      ref={modelRef}
       dispose={null}
       position={[0, -1.5, 0]}
       scale={[0.06, 0.06, 0.06]}
