@@ -2,10 +2,14 @@ import Image from "next/image";
 import bg from "../../public/background/home-background.png";
 import { RenderModel } from "@/components/render-model";
 import { WizardModel } from "@/components/models/wizard-model";
+import { NavigationMain } from "@/components/navigation/main";
 
 export default function Home() {
   return (
     <>
+      <nav>
+        <NavigationMain />
+      </nav>
       <main className="flex flex-col items-center justify-between relative">
         <Image
           src={bg}
