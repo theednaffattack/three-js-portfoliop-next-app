@@ -7,9 +7,7 @@ import { NavigationMain } from "@/components/navigation/main";
 export default function Home() {
   return (
     <>
-      <nav>
-        <NavigationMain />
-      </nav>
+      <NavigationMain />
       <main className="flex flex-col items-center justify-between relative">
         <Image
           src={bg}
