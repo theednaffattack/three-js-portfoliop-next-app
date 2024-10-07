@@ -7,7 +7,6 @@ import { NavigationMain } from "@/components/navigation/main";
 export default function Home() {
   return (
     <>
-      <NavigationMain />
       <main className="flex flex-col items-center justify-between relative">
         <Image
           src={bg}
@@ -18,6 +17,7 @@ export default function Home() {
           fill
         />
         <div className="w-full h-screen">
+          <NavigationMain />
           {/* navigation & 3d model component */}
           <RenderModel>
             <WizardModel />
