@@ -71,7 +71,7 @@ export function NavButton({
       >
         <Link
           aria-label={label}
-          className=" bg-background/20 border border-accent/30 border-solid backdrop-blur-[6px] text-foreground rounded-full flex items-center justify-center"
+          className=" bg-background/20 border border-accent/30 border-solid backdrop-blur-[6px] text-foreground rounded-full flex items-center justify-center shadow-glass-inset hover:shadow-glass-sm"
           href={link}
           target={newTab ? "_blank" : "_self"}
         >
