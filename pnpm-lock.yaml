@@ -26,6 +26,9 @@ dependencies:
   next:
     specifier: 14.2.14
     version: 14.2.14(react-dom@18.3.1)(react@18.3.1)
+  next-extra:
+    specifier: ^0.5.1
+    version: 0.5.1(next@14.2.14)(react@18.3.1)
   react:
     specifier: ^18
     version: 18.3.1
@@ -86,6 +89,11 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       regenerator-runtime: 0.14.1
+    dev: false
+
+  /@edge-runtime/cookies@5.0.0:
+    resolution: {integrity: sha512-VTTuKiK86cLuLKoLLwkCLN75CrXElmitD6Q+7XAYOMQyDUgsNEF/muorgZWttrvYQBVG+7Pdb8udFqIcLszyLw==}
+    engines: {node: '>=16'}
     dev: false
 
   /@emailjs/browser@4.4.1:
@@ -1145,6 +1153,11 @@ packages:
   /deep-is@0.1.4:
     resolution: {integrity: sha512-oIPzksmTg4/MriiaYGO+okXDT7ztn/w3Eptv/+gSIdMdKsJo0u4CfYNFJPy+4SKMuCqGw2wxnA+URMg3t8a/bQ==}
     dev: true
+
+  /deepmerge@4.3.1:
+    resolution: {integrity: sha512-3sUqbMEc77XqpdNO7FRyRog+eW3ph+GYCbj+rK+uYyRMuwsVy0rMiVtPn+QJlKFvWP/1PYpapqYn0Me2knFn+A==}
+    engines: {node: '>=0.10.0'}
+    dev: false
 
   /define-data-property@1.1.4:
     resolution: {integrity: sha512-rBMvIzlpA8v6E+SJZoo++HAYqsLrkg7MSfIinMPFhmkorw7X+dOXVJQs+QT69zGkzMyfDnIMN2Wid1+NbL3T+A==}
@@ -2405,6 +2418,19 @@ packages:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
     dev: true
 
+  /next-extra@0.5.1(next@14.2.14)(react@18.3.1):
+    resolution: {integrity: sha512-f3kldQpVEtDzVU1lL1HRy2iucpOwe7+5NdLKRg6ywB/Iv/nXAfhlXeQZGa6wI6AetUt+HvUWjxzT11EUmXhqEQ==}
+    peerDependencies:
+      next: 14 || 15
+      react: 18 || 19
+    dependencies:
+      '@edge-runtime/cookies': 5.0.0
+      deepmerge: 4.3.1
+      next: 14.2.14(react-dom@18.3.1)(react@18.3.1)
+      p-safe: 1.0.0
+      react: 18.3.1
+    dev: false
+
   /next@14.2.14(react-dom@18.3.1)(react@18.3.1):
     resolution: {integrity: sha512-Q1coZG17MW0Ly5x76shJ4dkC23woLAhhnDnw+DfTc7EpZSGuWrlsZ3bZaO8t6u1Yu8FVfhkqJE+U8GC7E0GLPQ==}
     engines: {node: '>=18.17.0'}
@@ -2557,6 +2583,10 @@ packages:
     dependencies:
       p-limit: 3.1.0
     dev: true
+
+  /p-safe@1.0.0:
+    resolution: {integrity: sha512-hEKmRlhj105fU/6G2AGLH8Hn/D4F5hhEMn0h1D4pt1868l1LUv4u3yq/MqNE/Kvyg192Y/pHZgBaFykDiIIB+A==}
+    dev: false
 
   /package-json-from-dist@1.0.1:
     resolution: {integrity: sha512-UEZIS3/by4OC8vL3P2dTXRETpebLI2NiI5vIrjaD/5UtrkFX/tNbwjTSRAGC/+7CAo2pIcBaRgWmcBBHcsaCIw==}
