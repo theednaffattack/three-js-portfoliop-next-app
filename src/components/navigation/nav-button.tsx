@@ -62,22 +62,23 @@ export function NavButton({
   newTab,
 }: NavButtonProps) {
   return (
-    <li className="absolute cursor-pointer z-50">
-      <div
-        className=""
-        style={{
-          transform: `translate(${x}, ${y})`,
-        }}
+    <div
+      className={className}
+      style={{
+        transform: `translate(${x}, ${y})`,
+      }}
+    >
+      <Link
+        aria-label={label}
+        className=" bg-background/20 border border-accent/30 border-solid backdrop-blur-[6px] text-foreground rounded-full flex items-center justify-center shadow-glass-inset hover:shadow-glass-sm group"
+        href={link}
+        target={newTab ? "_blank" : "_self"}
       >
-        <Link
-          aria-label={label}
-          className=" bg-background/20 border border-accent/30 border-solid backdrop-blur-[6px] text-foreground rounded-full flex items-center justify-center shadow-glass-inset hover:shadow-glass-sm"
-          href={link}
-          target={newTab ? "_blank" : "_self"}
-        >
-          <span className="relative w-14 h-14 p-4">{getIcon(icon)}</span>
-        </Link>
-      </div>
-    </li>
+        <span className="relative w-14 h-14 p-4 animate-spin-slow-reverse group-hover:pause group-hover:text-accent">
+          {getIcon(icon)}
+        </span>
+      </Link>
+    </div>
+    // </div>
   );
 }

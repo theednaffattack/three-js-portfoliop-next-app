@@ -10,30 +10,30 @@ export function NavigationMain(props: NavigationMainProps) {
   const numOfBtns = BtnList.length;
   const angleIncrement = circleDegrees / numOfBtns;
 
-  const buttonList = BtnList.map(({ icon, label, newTab, link }, btnIndex) => {
-    const angleRadian = (btnIndex * angleIncrement * Math.PI) / 180;
-    const radius = "calc(20vw - 1rem)";
-    const x = `calc(${radius}*${Math.cos(angleRadian)})`;
-    const y = `calc(${radius}*${Math.sin(angleRadian)})`;
-
-    return (
-      <NavButton
-        className="flex items-center justify-between relative"
-        key={`${btnIndex}-${label}-${x}-${y}`}
-        x={x}
-        y={y}
-        icon={icon}
-        label={label}
-        link={link}
-        newTab={newTab}
-      />
-    );
-  });
   return (
-    <nav>
-      <ul className="list-none fixed h-screen flex items-center justify-center w-full">
-        {buttonList}
-      </ul>
+    <nav className="list-none fixed h-screen flex items-center justify-center w-full">
+      {BtnList.map(({ icon, label, newTab, link }, btnIndex) => {
+        const angleRadian = (btnIndex * angleIncrement * Math.PI) / 180;
+        const radius = "calc(20vw - 1rem)";
+        const x = `calc(${radius}*${Math.cos(angleRadian)})`;
+        const y = `calc(${radius}*${Math.sin(angleRadian)})`;
+
+        return (
+          <div className="absolute cursor-pointer z-50  hover:pause animate-spin-slow group">
+            <NavButton
+              className="w-max flex items-center justify-center relative"
+              key={`${btnIndex}-${label}-${x}-${y}`}
+              x={x}
+              y={y}
+              icon={icon}
+              label={label}
+              link={link}
+              newTab={newTab}
+              {...props}
+            />
+          </div>
+        );
+      })}
     </nav>
   );
 }

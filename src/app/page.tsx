@@ -3,6 +3,13 @@ import bg from "../../public/background/home-background.png";
 import { RenderModel } from "@/components/render-model";
 import { WizardModel } from "@/components/models/wizard-model";
 import { NavigationMain } from "@/components/navigation/main";
+import dynamic from "next/dynamic";
+import { FunctionComponent } from "react";
+import { GroupProps } from "@react-three/fiber";
+
+// const Wizard = dynamic(() => import("@/components/models/wizard-model"), {
+//   ssr: false,
+// });
 
 export default function Home() {
   return (
